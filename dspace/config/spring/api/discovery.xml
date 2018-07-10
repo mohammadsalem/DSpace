@@ -154,6 +154,7 @@
                 <ref bean="searchFilterStatus" />
                 <ref bean="searchFilterOrcid" />
                 <ref bean="searchFilterLanguage"/>
+                <ref bean="searchFilterJournalTitle"/>
             </list>
         </property>
         <!--The sort filters for the discovery search-->
@@ -295,6 +296,7 @@
                 <ref bean="searchFilterStatus" />
                 <ref bean="searchFilterOrcid" />
                 <ref bean="searchFilterLanguage"/>
+                <ref bean="searchFilterJournalTitle"/>
             </list>
         </property>
         <!--The sort filters for the discovery search (same as defaultConfiguration above)-->
