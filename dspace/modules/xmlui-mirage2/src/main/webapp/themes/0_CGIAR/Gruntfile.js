@@ -11,6 +11,8 @@
 module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-node-sass');
+    grunt.loadNpmTasks('grunt-string-replace');
 
     // show elapsed time at the end
     require('time-grunt')(grunt);
@@ -54,20 +56,47 @@ module.exports = function (grunt) {
                         dest: 'scripts/respond.min.js'
                     }
                 ]
+            },
+            fonts: {
+                files: [
+                    {
+                        src: 'node_modules/@fortawesome/fontawesome-free/webfonts/*',
+                        expand: true,
+                        flatten: true,
+                        dest: 'fonts/fontawesome'
+                    },
+                    {
+                        src: 'node_modules/bootstrap-sass/assets/fonts/bootstrap/*',
+                        expand: true,
+                        flatten: true,
+                        dest: 'fonts/bootstrap'
+                    }
+                ]
             }
         },
-        compass: {
-            prod: {
+        'string-replace': {
+            // Dirty hack to modify Atmire's statlets so they don't require
+            // compass. Instead, we use the compass-sass-mixins from npm so
+            // we can compile our stylesheets with node-sass, which is much
+            // more modern than Ruby sass.
+            dist: {
+                files: {
+                    'styles/_statlets.scss': 'styles/_statlets.scss',
+                },
                 options: {
-                    config: 'config-prod.rb'
+                    replacements: [
+                        {
+                            pattern: '@import "compass"',
+                            replacement: '@import "../node_modules/compass-sass-mixins/lib/compass"'
+                        }
+                    ]
                 }
-
-            },
-            dev: {
-                options: {
-                    config: 'config-dev.rb'
-                }
-
+            }
+        },
+        sass: {
+            dist: {
+                src: 'styles/main.scss',
+                dest: 'styles/main.css',
             }
         },
         postcss: {
@@ -130,7 +159,7 @@ module.exports = function (grunt) {
         watch: {
             css: {
                 files: ['**/*.scss', '!**/node_modules/**'],
-                tasks: ['compass:dev', 'postcss:dev'],
+                tasks: ['sass', 'postcss:dev'],
                 options: {
                     livereload: true
                 }
@@ -153,7 +182,7 @@ module.exports = function (grunt) {
         'copy:bootstrap_color_scheme'
     ]);
     grunt.registerTask('shared-steps', [
-        'copy:scriptsxml', 'coffee', 'handlebars', 'useminPrepare','concat', 'copy:ie8_scripts'
+        'copy:scriptsxml', 'coffee', 'handlebars', 'useminPrepare','concat', 'copy:ie8_scripts', 'copy:fonts'
     ]);
     grunt.registerTask('no-compass-prod', [
         'shared-steps','uglify','usemin'
@@ -162,10 +191,10 @@ module.exports = function (grunt) {
         'shared-steps','uglify:generated'
     ]);
     grunt.registerTask('prod', [
-        'compass:prod', 'postcss:prod', 'no-compass-prod'
+        'string-replace', 'sass', 'postcss:prod', 'no-compass-prod'
     ]);
     grunt.registerTask('dev', [
-        'compass:dev', 'postcss:dev', 'no-compass-dev'
+        'classic_mirage_color_scheme', 'string-replace', 'sass', 'postcss:dev', 'no-compass-dev'
     ]);
     grunt.registerTask('default', [
         'classic_mirage_color_scheme',
