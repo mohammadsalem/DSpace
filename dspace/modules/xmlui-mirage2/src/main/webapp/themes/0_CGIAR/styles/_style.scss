@@ -1,4 +1,3 @@
-@import "fontawesome";
 @import "atmire-cua";
 
 //example mixin to set the text-selection style
@@ -253,7 +252,7 @@ div.secondary.search-browse{
   margin-bottom: 8px;
 }
 
-.item-summary-view-metadata .fab, .item-summary-view-metadata .fas {
+.item-summary-view-metadata .svg-inline--fa {
   color: $brand-primary;
   margin: 2px;
 }
@@ -301,6 +300,7 @@ div.secondary.search-browse{
   color: #A6CE39;
   margin-left: .25em; /* left and right margin should be 25% of size */
   margin-right: .25em;
+  vertical-align: middle;
 }
 
 #cookie-notification {
