@@ -16,12 +16,22 @@ $fa-font-path: '../fonts/fontawesome';
 //@import '../node_modules/@fortawesome/fontawesome-free/scss/icons';
 // Only import icons we will use from above _icons.scss
 .#{$fa-css-prefix}-at:before { content: fa-content($fa-var-at); }
+.#{$fa-css-prefix}-chart-bar:before { content: fa-content($fa-var-chart-bar); }
+// hack for v4 icon in Atmire CUA instead of importing all the v4 shims
+.#{$fa-css-prefix}-bar-chart:before { content: fa-content($fa-var-chart-bar); }
+.#{$fa-css-prefix}-download:before { content: fa-content($fa-var-download); }
 .#{$fa-css-prefix}-envelope:before { content: fa-content($fa-var-envelope); }
+.#{$fa-css-prefix}-eye:before { content: fa-content($fa-var-eye); }
 .#{$fa-css-prefix}-facebook-square:before { content: fa-content($fa-var-facebook-square); }
 .#{$fa-css-prefix}-github:before { content: fa-content($fa-var-github); }
 .#{$fa-css-prefix}-linkedin:before { content: fa-content($fa-var-linkedin); }
 .#{$fa-css-prefix}-mendeley:before { content: fa-content($fa-var-mendeley); }
 .#{$fa-css-prefix}-rss:before { content: fa-content($fa-var-rss); }
+.#{$fa-css-prefix}-sort-down:before { content: fa-content($fa-var-sort-down); }
+// hack for v4 icon in Atmire CUA instead of importing all the v4 shims
+.#{$fa-css-prefix}-sort-desc:before { content: fa-content($fa-var-sort-down); }
+.#{$fa-css-prefix}-square:before { content: fa-content($fa-var-square); }
+.#{$fa-css-prefix}-table:before { content: fa-content($fa-var-table); }
 .#{$fa-css-prefix}-twitter-square:before { content: fa-content($fa-var-twitter-square); }
 //@import '../node_modules/@fortawesome/fontawesome-free/scss/screen-reader';
 
