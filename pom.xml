@@ -33,7 +33,7 @@
         <jena.version>2.13.0</jena.version>
         <slf4j.version>1.7.14</slf4j.version>
         <cua.version.number>6.x-4.1.10-ilri-RC1</cua.version.number>
-        <mqm.version.number>6.x-2.11.1-0-RC4 </mqm.version.number>
+        <mqm.version.number>6.x-2.11.1-0-RC4</mqm.version.number>
         <datatables.version.number>6.x-2.0.12-0-RC1</datatables.version.number>
         <atmire-dspace-api.version.number>6.x-16.0.7-0</atmire-dspace-api.version.number>
         <atmire-dspace-xmlui.version.number>6.x-16.0.2-0</atmire-dspace-xmlui.version.number>
