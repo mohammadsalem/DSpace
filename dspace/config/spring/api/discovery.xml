@@ -111,6 +111,7 @@
                 <ref bean="searchFilterSponsorship" />
                 <ref bean="searchFilterRegion" />
                 <ref bean="searchFilterCountry" />
+                <ref bean="searchFilterTargetAudience"/>
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterAllianceBioversityCiat"/>
                 <ref bean="searchFilterBioversity"/>
@@ -144,6 +145,7 @@
                 <ref bean="searchFilterISIJournal" />
                 <ref bean="searchFilterRegion" />
                 <ref bean="searchFilterCountry" />
+                <ref bean="searchFilterTargetAudience"/>
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterSpecies" />
                 <ref bean="searchFilterAllianceBioversityCiat"/>
@@ -273,6 +275,7 @@
                 <ref bean="searchFilterSponsorship" />
                 <ref bean="searchFilterRegion" />
                 <ref bean="searchFilterCountry" />
+                <ref bean="searchFilterTargetAudience"/>
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterBreed" />
                 <ref bean="searchFilterAllianceBioversityCiat"/>
@@ -310,6 +313,7 @@
                 <ref bean="searchFilterISIJournal" />
                 <ref bean="searchFilterRegion" />
                 <ref bean="searchFilterCountry" />
+                <ref bean="searchFilterTargetAudience"/>
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterSpecies" />
                 <ref bean="searchFilterBreed" />
@@ -967,6 +971,18 @@
         <property name="facetLimit" value="10"/>
         <property name="sortOrderSidebar" value="COUNT"/>
         <property name="sortOrderFilterPage" value="VALUE"/>
+    </bean>
+
+    <bean id="searchFilterTargetAudience" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+        <property name="indexFieldName" value="targetaudience"/>
+        <property name="metadataFields">
+            <list>
+                <value>cg.targetaudience</value>
+            </list>
+        </property>
+        <property name="facetLimit" value="10"/>
+        <property name="sortOrderSidebar" value="COUNT"/>
+        <property name="sortOrderFilterPage" value="COUNT"/>
     </bean>
 
     <!--Sort properties-->
