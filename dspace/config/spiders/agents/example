@@ -79,7 +79,7 @@ DTS Agent
 EasyBib[\+\s]AutoCite[\+\s]
 easydl
 EBSCO\sEJS\sContent\sServer
-ecointernet
+EcoSearch
 ELinks\/
 EmailSiphon
 EmailWolf
@@ -197,7 +197,7 @@ nutch
 ocelli
 Offline(\s|\+)Navigator
 OgScrper
-okhttp
+^okhttp$
 onetszukaj
 ^Opera\/4$
 OurBrowser
