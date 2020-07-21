@@ -1,9 +1,9 @@
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
-import { faRss, faAt, faEnvelope, faChartBar, faTable } from '@fortawesome/free-solid-svg-icons'
+import { faRss, faAt, faEnvelope, faChartBar, faTable, faSquare } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookSquare, faTwitterSquare, faLinkedin, faMendeley, faGithub, faOrcid } from '@fortawesome/free-brands-svg-icons'
 
 // Add solid icons to our library
-library.add(faRss, faAt, faEnvelope, faChartBar, faTable)
+library.add(faRss, faAt, faEnvelope, faChartBar, faTable, faSquare)
 
 // Add brand icons to our library
 library.add(faFacebookSquare, faTwitterSquare, faLinkedin, faMendeley, faGithub, faOrcid)
