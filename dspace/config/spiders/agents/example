@@ -74,6 +74,7 @@ Dispatch\/\d
 Docoloc
 docomo
 Download\+Master
+Drupal
 DSurf
 DTS Agent
 EasyBib[\+\s]AutoCite[\+\s]
@@ -159,7 +160,7 @@ LongURL.API
 ltx71
 lwp
 lycos[_+]
-mail.ru
+mail\.ru
 MarcEdit
 mediapartners-google
 megite
@@ -197,7 +198,7 @@ nutch
 ocelli
 Offline(\s|\+)Navigator
 OgScrper
-^okhttp$
+okhttp
 onetszukaj
 ^Opera\/4$
 OurBrowser
@@ -205,7 +206,7 @@ panscient
 parsijoo
 ^Pattern\/\d
 Pcore-HTTP
-pear.php.net
+pear\.php\.net
 perman
 PHP\/
 pidcheck
@@ -251,6 +252,7 @@ The\+Knowledge\+AI
 titan
 ^Traackr\.com$
 Trove
+Turnitin
 twiceler
 Typhoeus
 ucsd
@@ -268,7 +270,7 @@ virus.detector
 voila
 ^voltron$
 voyager\/
-w3af.org
+w3af\.org
 Wanadoo
 Web(\s|\+)Downloader
 WebCloner
