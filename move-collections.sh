@@ -46,7 +46,7 @@ move_collection() {
     local collection_id=$(get_resource_id $1)
     local old_community_id=$(get_resource_id $2)
     local new_community_id=$(get_resource_id $3)
-    local psql_cmd="UPDATE community2collection SET community_id=$new_community_id WHERE community_id=$old_community_id and collection_id=$collection_id"
+    local psql_cmd="UPDATE community2collection SET community_id='$new_community_id' WHERE community_id='$old_community_id' and collection_id='$collection_id'"
 
     if [[ -z $collection_id || -z $old_community_id || -z $new_community_id ]]; then
         echo "Problem moving collection $1. Please make sure the to and from communities are correct."
