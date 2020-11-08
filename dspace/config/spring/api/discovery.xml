@@ -149,6 +149,7 @@
                 <ref bean="searchFilterTargetAudience"/>
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterSpecies" />
+                <ref bean="searchFilterBreed" />
                 <ref bean="searchFilterAllianceBioversityCiat"/>
                 <ref bean="searchFilterBioversity"/>
                 <ref bean="searchFilterCcafSubject"/>
@@ -279,7 +280,6 @@
                 <ref bean="searchFilterCountry" />
                 <ref bean="searchFilterTargetAudience"/>
                 <ref bean="searchFilterSubject" />
-                <ref bean="searchFilterBreed" />
                 <ref bean="searchFilterAllianceBioversityCiat"/>
                 <ref bean="searchFilterBioversity"/>
                 <ref bean="searchFilterCcafSubject"/>
