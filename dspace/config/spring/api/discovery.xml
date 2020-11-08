@@ -599,28 +599,22 @@
         <property name="sortOrderFilterPage" value="COUNT"/>
     </bean>
 
-    <bean id="searchFilterISIJournal" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+    <bean id="searchFilterISIJournal" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
         <property name="indexFieldName" value="isijournal"/>
         <property name="metadataFields">
             <list>
                 <value>cg.isijournal</value>
             </list>
         </property>
-        <property name="facetLimit" value="5"/>
-        <property name="sortOrderSidebar" value="COUNT"/>
-        <property name="sortOrderFilterPage" value="COUNT"/>
     </bean>
 
-    <bean id="searchFilterJournalTitle" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+    <bean id="searchFilterJournalTitle" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
         <property name="indexFieldName" value="journaltitle"/>
         <property name="metadataFields">
             <list>
                 <value>dc.source</value>
             </list>
         </property>
-        <property name="facetLimit" value="5"/>
-        <property name="sortOrderSidebar" value="COUNT"/>
-        <property name="sortOrderFilterPage" value="COUNT"/>
     </bean>
 
     <bean id="searchFilterIlriSubject" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
@@ -707,16 +701,13 @@
         <property name="sortOrderFilterPage" value="COUNT"/>
     </bean>
 
-    <bean id="searchFilterSubregion" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+    <bean id="searchFilterSubregion" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
         <property name="indexFieldName" value="subregion"/>
         <property name="metadataFields">
             <list>
                 <value>cg.coverage.subregion</value>
             </list>
         </property>
-        <property name="facetLimit" value="10"/>
-        <property name="sortOrderSidebar" value="COUNT"/>
-        <property name="sortOrderFilterPage" value="COUNT"/>
     </bean>
 
     <bean id="searchFilterCrpsubject" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
@@ -743,16 +734,13 @@
         <property name="sortOrderFilterPage" value="COUNT"/>
     </bean>
 
-    <bean id="searchFilterBasin" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+    <bean id="searchFilterBasin" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
         <property name="indexFieldName" value="basin"/>
         <property name="metadataFields">
             <list>
                 <value>cg.river.basin</value>
             </list>
         </property>
-        <property name="facetLimit" value="5"/>
-        <property name="sortOrderSidebar" value="COUNT"/>
-        <property name="sortOrderFilterPage" value="COUNT"/>
     </bean>
 
     <bean id="searchFilterType" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
@@ -911,40 +899,31 @@
         <property name="sortOrderFilterPage" value="COUNT"/>
     </bean>
 
-    <bean id="searchFilterSpecies" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+    <bean id="searchFilterSpecies" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
         <property name="indexFieldName" value="species"/>
         <property name="metadataFields">
             <list>
                 <value>cg.species</value>
             </list>
         </property>
-        <property name="facetLimit" value="5"/>
-        <property name="sortOrderSidebar" value="COUNT"/>
-        <property name="sortOrderFilterPage" value="COUNT"/>
     </bean>
 
-    <bean id="searchFilterBreed" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+    <bean id="searchFilterBreed" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
         <property name="indexFieldName" value="breed"/>
         <property name="metadataFields">
             <list>
                 <value>cg.species.breed</value>
             </list>
         </property>
-        <property name="facetLimit" value="5"/>
-        <property name="sortOrderSidebar" value="COUNT"/>
-        <property name="sortOrderFilterPage" value="COUNT"/>
     </bean>
 
-    <bean id="searchFilterOrcid" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+    <bean id="searchFilterOrcid" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
         <property name="indexFieldName" value="orcid"/>
         <property name="metadataFields">
             <list>
                 <value>cg.creator.id</value>
             </list>
         </property>
-        <property name="facetLimit" value="5"/>
-        <property name="sortOrderSidebar" value="COUNT"/>
-        <property name="sortOrderFilterPage" value="COUNT"/>
     </bean>
 
     <bean id="searchFilterPublisher" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
