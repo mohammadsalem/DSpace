@@ -86,11 +86,6 @@
                     <overlays>
                         <overlay>
                             <groupId>com.atmire</groupId>
-                            <artifactId>atmire-listings-and-reports-webapp</artifactId>
-                            <type>war</type>
-                        </overlay>
-                        <overlay>
-                            <groupId>com.atmire</groupId>
                             <artifactId>atmire-metadata-quality-jspui-webapp</artifactId>
                             <type>war</type>
                         </overlay>
@@ -118,17 +113,6 @@
         <dependency>
             <groupId>org.dspace.modules</groupId>
             <artifactId>additions</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.atmire</groupId>
-            <artifactId>atmire-listings-and-reports-webapp</artifactId>
-            <type>war</type>
-        </dependency>
-
-        <dependency>
-            <groupId>com.atmire</groupId>
-            <artifactId>atmire-listings-and-reports-jspui-api</artifactId>
         </dependency>
 
         <dependency>

@@ -74,7 +74,6 @@
                                         atmire-cua-common,
                                         atmire-metadata-quality-common,
                                         atmire-datatables-common,
-                                        atmire-listings-and-reports-common
                                     </includeArtifactIds>
                                     <overWriteReleases>true</overWriteReleases>
                                     <overWriteSnapshots>true</overWriteSnapshots>
@@ -194,11 +193,6 @@
         <dependency>
             <groupId>com.atmire</groupId>
             <artifactId>atmire-datatables-common</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.atmire</groupId>
-            <artifactId>atmire-listings-and-reports-common</artifactId>
         </dependency>
 
     	<!-- This dependency ensures DSpace OAI JAR is added to [dspace]/lib/,
