@@ -652,26 +652,6 @@
           <vocabulary>cg-species-breed</vocabulary>
           <required></required>
         </field>
-        <field>
-          <dc-schema>cg</dc-schema>
-          <dc-element>message</dc-element>
-          <dc-qualifier>voice</dc-qualifier>
-          <repeatable>false</repeatable>
-          <label>Voice message</label>
-          <input-type>textarea</input-type>
-          <hint>Enter a voice message text that would be recorded for extension.</hint>
-          <required></required>
-        </field>
-        <field>
-          <dc-schema>cg</dc-schema>
-          <dc-element>message</dc-element>
-          <dc-qualifier>sms</dc-qualifier>
-          <repeatable>false</repeatable>
-          <label>SMS message</label>
-          <input-type>textarea</input-type>
-          <hint>Enter an SMS message that would be distributed on mobile services.</hint>
-          <required></required>
-        </field>
       </page>
     </form>
     <form name="AgriFood Chain capacity building">
