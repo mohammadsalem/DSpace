@@ -107,10 +107,22 @@ def resolve_dois(dois):
                 # get the title
                 sql = "SELECT text_value FROM metadatavalue WHERE metadata_field_id=%s AND dspace_object_id=%s"
                 cursor.execute(sql, (title_metadata_field_id, dspace_object_id))
+
+                if cursor.rowcount != 1:
+                    print(f"Missing title for {doi}, skipping")
+
+                    continue
+
                 title = cursor.fetchone()[0]
 
                 # get the handle
                 cursor.execute(sql, (handle_metadata_field_id, dspace_object_id))
+
+                if cursor.rowcount != 1:
+                    print(f"Missing handle for {doi}, skipping")
+
+                    continue
+
                 handle = cursor.fetchone()[0]
 
                 row = {
