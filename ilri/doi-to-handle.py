@@ -97,8 +97,12 @@ def resolve_dois(dois):
                     print(f"Found {doi}, DSpace object: {dspace_object_id}")
                 elif cursor.rowcount > 1 and not args.quiet:
                     print(f"Found multiple items for {doi}")
+
+                    continue
                 else:
                     print(f"Not found: {doi}")
+
+                    continue
 
                 # get the title
                 sql = "SELECT text_value FROM metadatavalue WHERE metadata_field_id=%s AND dspace_object_id=%s"
