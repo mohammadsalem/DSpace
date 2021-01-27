@@ -2375,6 +2375,8 @@
 	<message key="xmlui.dri2xhtml.METS-1.0.item-citation">Citation</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-notes">Notes</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-affiliations">CGIAR Affiliations</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-sdg">Contributes to SDGs</message>
+	<message key="xmlui.dri2xhtml.METS-1.0.item-impactarea">CGIAR Impact Areas</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-investors-sponsors">Investors/sponsors</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-identifiers">Identifiers</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-identifier-googleurl">Google URL: </message>
