@@ -30,7 +30,7 @@
     <node label="Adetonah Sounkoura: 0000-0002-7193-1721" />
     <node label="Adewunmi Adeoye: 0000-0001-9102-8874" />
     <node label="Adham Badawy: 0000-0002-6852-9061" />
-    <node label="Adina Chain Guadarrama: 0000-0002-6944-2064" />
+    <node label="Adina Chain-Guadarrama: 0000-0002-6944-2064" />
     <node label="Aditi Mukherji: 0000-0002-8061-4349" />
     <node label="Aditi Sanjay: 0000-0002-9455-4746" />
     <node label="Aditya Sood: 0000-0001-8301-4501" />
@@ -147,7 +147,7 @@
     <node label="Beata Dedicova: 0000-0001-8565-4676" />
     <node label="Beatrice Aighewi: 0000-0002-9398-1674" />
     <node label="Beatrice Ekesa: 0000-0002-2630-258X" />
-    <node label="Bedru: 0000-0002-7344-5743" />
+    <node label="Bedru B. Balana: 0000-0002-7344-5743" />
     <node label="Bekele Hundie Kotu: 0000-0001-5788-6461" />
     <node label="Bekele Shiferaw: 0000-0002-3645-320X" />
     <node label="Beliyou Haile: 0000-0003-4949-6740" />
@@ -184,7 +184,6 @@
     <node label="Bruno RAPIDEL: 0000-0003-0288-5650" />
     <node label="Bryan Carlson: 0000-0002-9098-356X" />
     <node label="Bui Tan Yen: 0000-0002-3899-5811" />
-    <node label="Burkart Stefan: 0000-0002-7558-9177" />
     <node label="Béla Teeken: 0000-0002-3150-1532" />
     <node label="Caitlin Corner-Dolloff: 0000-0002-7322-9442" />
     <node label="Canon Norris Savala Engoke: 0000-0002-9667-2324" />
@@ -205,6 +204,7 @@
     <node label="Catherine Pfeifer: 0000-0001-9738-8758" />
     <node label="Cathy Farnworth: 0000-0002-2263-865X" />
     <node label="Cecile Grenier: 0000-0001-5390-8344" />
+    <node label="Celine Aubert: 0000-0001-6284-4821" />
     <node label="Chandrashekhar Biradar: 0000-0002-9532-9452" />
     <node label="Chao Ning: 0000-0001-8247-1700" />
     <node label="Charity Mutegi: 0000-0002-3188-0480" />
@@ -321,6 +321,7 @@
     <node label="Edward Boamah: 0000-0001-7912-7909" />
     <node label="Edward Kanju: 0000-0002-0413-1302" />
     <node label="Ehsan Dulloo: 0000-0001-5567-8220" />
+    <node label="Eileen Bogweh Nchanji: 0000-0002-6859-0962" />
     <node label="Eldad Karamura: 0000-0001-9764-9276" />
     <node label="Elie Dannon: 0000-0002-7323-6212" />
     <node label="Eliot Gee: 0000-0003-3863-7544" />
@@ -565,6 +566,7 @@
     <node label="Jonathan Ensor: 0000-0003-2402-5491" />
     <node label="Jonathan Lautze: 0000-0003-4215-5919" />
     <node label="Jonathan Matheka: 0000-0002-9199-7832" />
+    <node label="Jonathan Mockshell: 0000-0003-1990-6657" />
     <node label="Jonathan Newby: 0000-0001-8088-5491" />
     <node label="Jonathan Rushton: 0000-0001-5450-4202" />
     <node label="Jonathan Sanderman: 0000-0002-3215-1706" />
@@ -669,11 +671,12 @@
     <node label="Le Vinh Bui: 0000-0002-8037-4365" />
     <node label="Lederson Gañán: 0000-0002-2882-4779" />
     <node label="Leena Tripathi: 0000-0001-5723-4981" />
-    <node label="Leigh Winowiecki: 0000-0001-5572-1284" />
+    <node label="Leigh Ann Winowiecki: 0000-0001-5572-1284" />
     <node label="Lejon: 0000-0002-6795-0962" />
     <node label="Leo Kris Palao: 0000-0002-2485-0267" />
     <node label="Leocadio Sebastian: 0000-0002-5678-3847" />
     <node label="Leroy Mwanzia: 0000-0002-1107-6110" />
+    <node label="Lewis Machida: 0000-0002-0012-3997" />
     <node label="Lieven Claessens: 0000-0003-2961-8990" />
     <node label="Likimyelesh Nigussie: 0000-0002-6380-743X" />
     <node label="Lilian Rojas Mendoza: 0000-0002-7935-1924" />
@@ -782,6 +785,7 @@
     <node label="May-Guri Sæthre: 0000-0001-8819-9154" />
     <node label="Maya Rajasekharan: 0000-0002-2724-7711" />
     <node label="Mbaye Yade: 0000-0002-2078-2420" />
+    <node label="Medha Devare: 0000-0003-0041-4812" />
     <node label="Megan McNeil Zandstra: 0000-0002-3326-6492" />
     <node label="Meike S. Andersson: 0000-0002-5028-7770" />
     <node label="Meine van Noordwijk: 0000-0002-7791-4703" />
@@ -906,6 +910,7 @@
     <node label="Oluwafemi Lawal: 0000-0002-0673-3569" />
     <node label="Oluwaseun Omikunle: 0000-0002-8300-4159" />
     <node label="Omar Alsoudani: 0000-0003-0700-6918" />
+    <node label="Omar E. Benites-Alfaro: 0000-0002-6852-9598" />
     <node label="Omowumi Adewuyi: 0000-0002-3062-2885" />
     <node label="Onasanya O.O.: 0000-0003-0559-6723" />
     <node label="Onyebuchim Evelyn Ohanwusi: 0000-0001-9449-3990" />
@@ -1071,8 +1076,8 @@
     <node label="Samuel Adjei-Nsiah: 0000-0002-7394-4913" />
     <node label="Samuel Mutiga: 0000-0001-9919-6231" />
     <node label="Samuel T. Partey: 0000-0001-5223-0367" />
+    <node label="Sander J. Zwart: 0000-0002-5091-1801" />
     <node label="Sander Muilerman: 0000-0001-9103-3294" />
-    <node label="Sander Zwart: 0000-0002-5091-1801" />
     <node label="Sandipan Mukherjee: 0000-0001-7299-0304" />
     <node label="Sandra Bhatasara: 0000-0002-3094-1907" />
     <node label="Sandra Jimena Valencia Cataño: 0000-0001-5227-0801" />
@@ -1082,6 +1087,7 @@
     <node label="Sarah K. Jones: 0000-0002-9422-5563" />
     <node label="Sarah Mayanja: 0000-0002-9698-0036" />
     <node label="Sarath Gunasinghe: 0000-0002-2044-1685" />
+    <node label="Saul Lozano: 0000-0003-1517-6853" />
     <node label="Sawasan Hassan: 0000-0002-5057-8957" />
     <node label="Sawsan Tawkaz: 0000-0001-6683-5041" />
     <node label="Segun Adeoye: 0000-0003-4221-3269" />
@@ -1136,6 +1142,7 @@
     <node label="Stacy Philpott: 0000-0002-8338-3806" />
     <node label="Stanley Karanja Ng'ang'a: 0000-0002-6166-7920" />
     <node label="Stanley Karanja: 0000-0002-9323-736X" />
+    <node label="Stefan Burkart: 0000-0001-5297-2184" />
     <node label="Stefan Frank: 0000-0001-5702-8547" />
     <node label="Stefan Hauser: 0000-0002-6329-7783" />
     <node label="Stefan Strohmeier: 0000-0003-0723-5964" />
@@ -1214,6 +1221,7 @@
     <node label="Usman Khalid Awan: 0000-0001-8663-5688" />
     <node label="Utsumi Y: 0000-0002-9196-7123" />
     <node label="V. Nicodeme FASSINOU HOTEGNI: 0000-0001-5826-3688" />
+    <node label="VINCENT JOHNSON: 0000-0001-7874-178X" />
     <node label="Valentin Guignon: 0000-0003-0903-6811" />
     <node label="Valerie Flax: 0000-0003-0200-3355" />
     <node label="Valerio Graziano: 0000-0002-2025-3449" />
@@ -1292,7 +1300,6 @@
     <node label="olutayo Kayode: 0000-0003-2219-2552" />
     <node label="patricia bravo: 0000-0001-6572-9554" />
     <node label="sara jani: 0000-0003-2554-5026" />
-    <node label="saul lozano-fuentes: 0000-0003-1517-6853" />
     <node label="sebastien carpentier: 0000-0002-7389-6405" />
     <node label="sripada m udupa: 0000-0003-4225-7843" />
     <node label="tamer alshater: 0000-0002-0698-689X" />
