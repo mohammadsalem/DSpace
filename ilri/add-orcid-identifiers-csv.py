@@ -225,7 +225,7 @@ def main():
                             cursor.execute("SELECT nextval('metadatavalue_seq')")
                             metadata_value_id = cursor.fetchone()[0]
 
-                            sql = "INSERT INTO metadatavalue (metadata_value_id, dspace_object_id, metadata_field_id, text_value, place, confidence) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+                            sql = "INSERT INTO metadatavalue (metadata_value_id, dspace_object_id, metadata_field_id, text_value, place, confidence) VALUES (%s, %s, %s, %s, %s, %s)"
                             cursor.execute(
                                 sql,
                                 (
