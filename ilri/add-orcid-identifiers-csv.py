@@ -55,15 +55,47 @@ import sys
 
 def main():
     # parse the command line arguments
-    parser = argparse.ArgumentParser(description='Add ORCID identifiers to items for a given author name from CSV. Respects the author order from the dc.contributor.author field.')
-    parser.add_argument('--author-field-name', '-f', help='Name of column with author names.', default='dc.contributor.author')
-    parser.add_argument('--csv-file', '-i', help='CSV file containing author names and ORCID identifiers.', required=True, type=argparse.FileType('r', encoding='UTF-8'))
-    parser.add_argument("--database-name", "-db", help='Database name', required=True)
-    parser.add_argument("--database-user", "-u", help='Database username', required=True)
-    parser.add_argument("--database-pass", "-p", help='Database password', required=True)
-    parser.add_argument('--debug', '-d', help='Print debug messages to standard error (stderr).', action='store_true')
-    parser.add_argument('--dry-run', '-n', help='Only print changes that would be made.', action='store_true')
-    parser.add_argument('--orcid-field-name', '-o', help='Name of column with creators in "Name: 0000-0000-0000-0000" format.', default='cg.creator.id')
+    parser = argparse.ArgumentParser(
+        description="Add ORCID identifiers to items for a given author name from CSV. Respects the author order from the dc.contributor.author field."
+    )
+    parser.add_argument(
+        "--author-field-name",
+        "-f",
+        help="Name of column with author names.",
+        default="dc.contributor.author",
+    )
+    parser.add_argument(
+        "--csv-file",
+        "-i",
+        help="CSV file containing author names and ORCID identifiers.",
+        required=True,
+        type=argparse.FileType("r", encoding="UTF-8"),
+    )
+    parser.add_argument("--database-name", "-db", help="Database name", required=True)
+    parser.add_argument(
+        "--database-user", "-u", help="Database username", required=True
+    )
+    parser.add_argument(
+        "--database-pass", "-p", help="Database password", required=True
+    )
+    parser.add_argument(
+        "--debug",
+        "-d",
+        help="Print debug messages to standard error (stderr).",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--dry-run",
+        "-n",
+        help="Only print changes that would be made.",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--orcid-field-name",
+        "-o",
+        help='Name of column with creators in "Name: 0000-0000-0000-0000" format.',
+        default="cg.creator.id",
+    )
     args = parser.parse_args()
 
     # set the signal handler for SIGINT (^C) so we can exit cleanly
@@ -71,13 +103,15 @@ def main():
 
     # connect to database
     try:
-        conn_string = 'dbname={0} user={1} password={2} host=localhost'.format(args.database_name, args.database_user, args.database_pass)
+        conn_string = "dbname={0} user={1} password={2} host=localhost".format(
+            args.database_name, args.database_user, args.database_pass
+        )
         conn = psycopg2.connect(conn_string)
 
         if args.debug:
-            sys.stderr.write(Fore.GREEN + 'Connected to the database.\n' + Fore.RESET)
+            sys.stderr.write(Fore.GREEN + "Connected to the database.\n" + Fore.RESET)
     except psycopg2.OperationalError:
-        sys.stderr.write(Fore.RED + 'Unable to connect to the database.\n' + Fore.RESET)
+        sys.stderr.write(Fore.RED + "Unable to connect to the database.\n" + Fore.RESET)
 
         # close output file before we exit
         args.csv_file.close()
@@ -92,7 +126,11 @@ def main():
         author_name = row[args.author_field_name]
 
         if args.debug:
-            sys.stderr.write(Fore.GREEN + 'Finding items with author name: {0}\n'.format(author_name) + Fore.RESET)
+            sys.stderr.write(
+                Fore.GREEN
+                + "Finding items with author name: {0}\n".format(author_name)
+                + Fore.RESET
+            )
 
         with conn:
             # cursor will be closed after this block exits
@@ -100,25 +138,37 @@ def main():
             with conn.cursor() as cursor:
                 # find all item metadata records with this author name
                 # metadata_field_id 3 is author
-                sql = 'SELECT dspace_object_id, place FROM metadatavalue WHERE dspace_object_id IN (SELECT uuid FROM item) AND metadata_field_id=3 AND text_value=%s'
+                sql = "SELECT dspace_object_id, place FROM metadatavalue WHERE dspace_object_id IN (SELECT uuid FROM item) AND metadata_field_id=3 AND text_value=%s"
                 # remember that tuples with one item need a comma after them!
                 cursor.execute(sql, (author_name,))
                 records_with_author_name = cursor.fetchall()
 
                 if len(records_with_author_name) >= 0:
                     if args.debug:
-                        sys.stderr.write(Fore.GREEN + 'Found {0} items.\n'.format(len(records_with_author_name)) + Fore.RESET)
+                        sys.stderr.write(
+                            Fore.GREEN
+                            + "Found {0} items.\n".format(len(records_with_author_name))
+                            + Fore.RESET
+                        )
 
                     # extract cg.creator.id text to add from CSV and strip leading/trailing whitespace
                     text_value = row[args.orcid_field_name].strip()
                     # extract the ORCID identifier from the cg.creator.id text field in the CSV
-                    orcid_identifier_pattern = re.compile(r'[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}')
+                    orcid_identifier_pattern = re.compile(
+                        r"[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}"
+                    )
                     orcid_identifier_match = orcid_identifier_pattern.search(text_value)
 
                     # sanity check to make sure we extracted the ORCID identifier from the cg.creator.id text in the CSV
                     if orcid_identifier_match is None:
                         if args.debug:
-                            sys.stderr.write(Fore.YELLOW + 'Skipping invalid ORCID identifier in "{0}".\n'.format(text_value) + Fore.RESET)
+                            sys.stderr.write(
+                                Fore.YELLOW
+                                + 'Skipping invalid ORCID identifier in "{0}".\n'.format(
+                                    text_value
+                                )
+                                + Fore.RESET
+                            )
                         continue
 
                     # we only expect one ORCID identifier, so if it matches it will be group "0"
@@ -141,33 +191,64 @@ def main():
                         # note that the SQL here is quoted differently to allow us to use LIKE with % wildcards with our paremeter subsitution
                         sql = "SELECT * from metadatavalue WHERE dspace_object_id=%s AND metadata_field_id=%s AND text_value LIKE '%%' || %s || '%%' AND confidence=%s AND dspace_object_id IN (SELECT uuid FROM item)"
 
-
                         # Adapt Python’s uuid.UUID type to PostgreSQL's uuid
                         # See: https://www.psycopg.org/docs/extras.html
                         psycopg2.extras.register_uuid()
 
-                        cursor.execute(sql, (dspace_object_id, metadata_field_id, orcid_identifier, confidence))
+                        cursor.execute(
+                            sql,
+                            (
+                                dspace_object_id,
+                                metadata_field_id,
+                                orcid_identifier,
+                                confidence,
+                            ),
+                        )
                         records_with_orcid_identifier = cursor.fetchall()
 
                         if len(records_with_orcid_identifier) == 0:
                             if args.dry_run:
-                                print('Would add ORCID identifier "{0}" to item {1}.'.format(text_value, dspace_object_id))
+                                print(
+                                    'Would add ORCID identifier "{0}" to item {1}.'.format(
+                                        text_value, dspace_object_id
+                                    )
+                                )
                                 continue
 
-                            print('Adding ORCID identifier "{0}" to item {1}.'.format(text_value, dspace_object_id))
+                            print(
+                                'Adding ORCID identifier "{0}" to item {1}.'.format(
+                                    text_value, dspace_object_id
+                                )
+                            )
 
                             # metadatavalue IDs come from a PostgreSQL sequence that increments when you call it
                             cursor.execute("SELECT nextval('metadatavalue_seq')")
                             metadata_value_id = cursor.fetchone()[0]
 
-                            sql = 'INSERT INTO metadatavalue (metadata_value_id, dspace_object_id, metadata_field_id, text_value, place, confidence) VALUES (%s, %s, %s, %s, %s, %s, %s)'
-                            cursor.execute(sql, (metadata_value_id, dspace_object_id, metadata_field_id, text_value, place, confidence))
+                            sql = "INSERT INTO metadatavalue (metadata_value_id, dspace_object_id, metadata_field_id, text_value, place, confidence) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+                            cursor.execute(
+                                sql,
+                                (
+                                    metadata_value_id,
+                                    dspace_object_id,
+                                    metadata_field_id,
+                                    text_value,
+                                    place,
+                                    confidence,
+                                ),
+                            )
                         else:
                             if args.debug:
-                                sys.stderr.write(Fore.GREEN + 'Item {0} already has an ORCID identifier for {1}.\n'.format(dspace_object_id, text_value) + Fore.RESET)
+                                sys.stderr.write(
+                                    Fore.GREEN
+                                    + "Item {0} already has an ORCID identifier for {1}.\n".format(
+                                        dspace_object_id, text_value
+                                    )
+                                    + Fore.RESET
+                                )
 
     if args.debug:
-        sys.stderr.write(Fore.GREEN + 'Disconnecting from database.\n' + Fore.RESET)
+        sys.stderr.write(Fore.GREEN + "Disconnecting from database.\n" + Fore.RESET)
 
     # close the database connection before leaving
     conn.close()
